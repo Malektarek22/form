@@ -1,0 +1,50 @@
+body {
+    background-color: #d7dcf0; /* Baby blue background color for the entire page */
+}
+input{
+    text-align: right;
+}
+.container-box {
+    background-color: #ffffff; /* White background color for the box */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow added to the box */
+    margin-top: 50px; /* Adjust the margin from the top as needed */
+  }
+  
+  .form-container {
+    background-color: #ffffff; /* White background color for the form container */
+    border-radius: 10px;
+    padding: 20px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); Shadow added to the form container */
+  }
+  
+  /* Center the content vertically and horizontally */
+  .center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  /* Add some spacing to the bottom of the form */
+  .mt-3 {
+    margin-top: 15px;
+  }
+  
+  /* Custom style for invalid inputs */
+  input:invalid {
+    border-color: red;
+  }
+  
+  /* Custom style for validation messages */
+  .validation-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+img{
+    width: 700px;
+    height: auto;
+}

@@ -1,0 +1,49 @@
+<body>
+    <div class="container center-content">
+        <div class="container-box">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="assets/logo.png" alt="Logo" class="img-fluid">
+                </div>
+
+                <div class="col-md-6" style="display:flex ; justify-content: center; flex-direction: column;">
+                    <h3 class="text-primary mb-4">!مرحباً بعودتك</h3>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-container">
+                                <form [formGroup]="loginForm" (ngSubmit)="Login()">
+                                    <div class="mb-3">
+                                        <input formControlName="email" type="email" class="form-control"
+                                            id="exampleInputEmail1" placeholder="البريد الإلكتروني">
+                                        <div
+                                            *ngIf="loginForm.controls['email'].invalid &&
+                                            (loginForm.controls['email'].touched || loginForm.controls['email'].dirty)">
+                                            <div *ngIf="loginForm.controls['email'].hasError('required')"
+                                                class="validation-message">يرجي إدخال البريد الإلكتروني*</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <input type="password" formControlName="password" class="form-control"
+                                            id="exampleInputPassword1" placeholder="كلمة المرور">
+                                        <div
+                                            *ngIf="loginForm.controls['password'].invalid &&
+                                        (loginForm.controls['password'].touched || loginForm.controls['password'].dirty)">
+                                            <div *ngIf="loginForm.controls['password'].hasError('required')"
+                                                class="validation-message">يرجي إدخال كلمة المرور*</div>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary">تسجيل الدخول</button>
+
+                                    <p class="mt-3">لا يوجد لديك حساب ؟ <a routerLink="/signup">إنشاء حساب جديد؟</a></p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
