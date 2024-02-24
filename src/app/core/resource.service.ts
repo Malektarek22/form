@@ -6,6 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ResourceService {
+  sendResetLink(forgetPasswordData: any) {
+    throw new Error('Method not implemented.');
+  }
+  forgotPassword(email: any) {
+    throw new Error('Method not implemented.');
+  }
 
 
   constructor(private http: HttpClient) { }

@@ -1,90 +1,92 @@
 <!-- app-signup.component.html -->
 
-<div class="container center-content">
-    <div class="container-box">
-        <div class="row">
-            <div class="col-md-6">
-                <img src="assets/logo.png" alt="Logo" class="img-fluid">
-            </div>
+<body>
+    <div class="container center-content">
+        <div class="container-box">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="assets/logo.png" alt="Logo" class="img-fluid">
+                </div>
 
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-container">
-                            <form [formGroup]="signupForm" (ngSubmit)="add()">
-                                <div class="mb-3">
-                                    <input formControlName="name" type="text" class="form-control" id="exampleInputName"
-                                        placeholder="اسم المستخدم">
-                                    <div *ngIf="signupForm.controls['name'].invalid &&
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-container">
+                                <form [formGroup]="signupForm" (ngSubmit)="add()">
+                                    <div class="mb-3">
+                                        <input formControlName="name" type="text" class="form-control"
+                                            id="exampleInputName" placeholder="اسم المستخدم">
+                                        <div *ngIf="signupForm.controls['name'].invalid &&
                                         (signupForm.controls['name'].touched || signupForm.controls['name'].dirty)">
-                                        <div *ngIf="signupForm.controls['name'].hasError('required')"
-                                            class="validation-message">يرجي إدخال الاسم*</div>
+                                            <div *ngIf="signupForm.controls['name'].hasError('required')"
+                                                class="validation-message">يرجي إدخال الاسم*</div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="mb-3">
-                                    <input formControlName="email" type="email" class="form-control"
-                                        id="exampleInputEmail2" placeholder="البريد الإلكتروني">
-                                    <div *ngIf="signupForm.controls['email'].invalid &&
+                                    <div class="mb-3">
+                                        <input formControlName="email" type="email" class="form-control"
+                                            id="exampleInputEmail2" placeholder="البريد الإلكتروني">
+                                        <div *ngIf="signupForm.controls['email'].invalid &&
                                         (signupForm.controls['email'].touched || signupForm.controls['email'].dirty)">
-                                        <div *ngIf="signupForm.controls['email'].hasError('required')"
-                                            class="validation-message">يرجي إدخال البريد الإلكتروني*</div>
+                                            <div *ngIf="signupForm.controls['email'].hasError('required')"
+                                                class="validation-message">يرجي إدخال البريد الإلكتروني*</div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="mb-3">
-                                    <input formControlName="phoneNumber" type="tel" class="form-control"
-                                        id="exampleInputPhoneNumber" placeholder="رقم الهاتف">
-                                    <div
-                                        *ngIf="signupForm.controls['phoneNumber'].invalid &&
+                                    <div class="mb-3">
+                                        <input formControlName="phoneNumber" type="tel" class="form-control"
+                                            id="exampleInputPhoneNumber" placeholder="رقم الهاتف">
+                                        <div
+                                            *ngIf="signupForm.controls['phoneNumber'].invalid &&
                                         (signupForm.controls['phoneNumber'].touched || signupForm.controls['phoneNumber'].dirty)">
-                                        <div *ngIf="signupForm.controls['phoneNumber'].hasError('required')"
-                                            class="validation-message">يرجي إدخال رقم الهاتف*</div>
+                                            <div *ngIf="signupForm.controls['phoneNumber'].hasError('required')"
+                                                class="validation-message">يرجي إدخال رقم الهاتف*</div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="mb-3">
-                                    <input formControlName="password" type="password" class="form-control"
-                                        id="exampleInputPassword2" placeholder="كلمة المرور"
-                                        (input)="removeValidationMessage()">
-                                    <div
-                                        *ngIf="signupForm.controls['password'].invalid &&
+                                    <div class="mb-3">
+                                        <input formControlName="password" type="password" class="form-control"
+                                            id="exampleInputPassword2" placeholder="كلمة المرور"
+                                            (input)="removeValidationMessage()">
+                                        <div
+                                            *ngIf="signupForm.controls['password'].invalid &&
                                         (signupForm.controls['password'].touched || signupForm.controls['password'].dirty)">
-                                        <div *ngIf="signupForm.controls['password'].hasError('required')"
-                                            class="validation-message">يرجي إدخال كلمة المرور*</div>
+                                            <div *ngIf="signupForm.controls['password'].hasError('required')"
+                                                class="validation-message">يرجي إدخال كلمة المرور*</div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="mb-3">
-                                    <input formControlName="confirmPassword" type="password" class="form-control"
-                                        id="exampleInputConfirmPassword" placeholder="تاكيد كلمة المرور">
-                                    <div
-                                        *ngIf="signupForm.controls['confirmPassword'].invalid &&
+                                    <div class="mb-3">
+                                        <input formControlName="confirmPassword" type="password" class="form-control"
+                                            id="exampleInputConfirmPassword" placeholder="تاكيد كلمة المرور">
+                                        <div
+                                            *ngIf="signupForm.controls['confirmPassword'].invalid &&
                                         (signupForm.controls['confirmPassword'].touched || signupForm.controls['confirmPassword'].dirty)">
-                                        <div *ngIf="signupForm.controls['confirmPassword'].hasError('required')"
-                                            class="validation-message">يرجي تاكيد كلمه المرور*</div>
+                                            <div *ngIf="signupForm.controls['confirmPassword'].hasError('required')"
+                                                class="validation-message">يرجي تاكيد كلمه المرور*</div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="mb-3">
-                                    <input formControlName="otp" type="text" class="form-control" id="exampleInputOTP"
-                                        placeholder="كود التفعيل">
-                                    <div *ngIf="signupForm.controls['otp'].invalid &&
+                                    <div class="mb-3">
+                                        <input formControlName="otp" type="text" class="form-control"
+                                            id="exampleInputOTP" placeholder="كود التفعيل">
+                                        <div *ngIf="signupForm.controls['otp'].invalid &&
                                         (signupForm.controls['otp'].touched || signupForm.controls['otp'].dirty)">
-                                        <div *ngIf="signupForm.controls['otp'].hasError('required')"
-                                            class="validation-message">
-                                            يرجى إدخال كود التفعيل*</div>
+                                            <div *ngIf="signupForm.controls['otp'].hasError('required')"
+                                                class="validation-message">
+                                                يرجى إدخال كود التفعيل*</div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <button type="button" class="btn btn-primary" (click)="sendOTP()">إرسال كود
-                                    التفعيل</button>
+                                    <button type="button" class="btn btn-primary" (click)="sendOTP()">إرسال كود
+                                        التفعيل</button>
 
-                                <button type="submit" class="btn btn-primary">انشاء الحساب</button>
+                                    <button type="submit" class="btn btn-primary">انشاء الحساب</button>
 
-                                <p class="mt-3">هل لديك حساب بالفعل ؟ <a routerLink="/login">تسجيل الدخول</a></p>
-                            </form>
+                                    <p class="mt-3">هل لديك حساب بالفعل ؟ <a routerLink="/login">تسجيل الدخول</a></p>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</body>
