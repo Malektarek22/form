@@ -30,5 +30,9 @@ export class ResourceService {
     const loginUrl = `http://41.65.11.55:8023/user/generate_otp?phone=${phoneNumber}`;
     return this.http.post(loginUrl, '');
   }
+  reset(data: any) {
+    const loginUrl = `http://41.65.11.55:8023/token/reset?email=${data}`;
+    return this.http.get(loginUrl);
+  }
 
 }

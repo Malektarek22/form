@@ -1,21 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ResourceService } from '../core/resource.service';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-forget-password',
   standalone: true,
   templateUrl: './forget-password.component.html',
-  styleUrls: ['./forget-password.component.css']
+  styleUrls: ['./forget-password.component.css'],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule]
 })
 export class ForgetPasswordComponent implements OnInit {
   forgetPasswordForm!: FormGroup;
+  login: any;
 
   constructor(private formBuilder: FormBuilder, private resourceService: ResourceService) { }
 
   ngOnInit() {
     this.initializeForgetPasswordForm();
   }
+
+  Login() { }
 
   initializeForgetPasswordForm() {
     this.forgetPasswordForm = this.formBuilder.group({
@@ -26,7 +32,7 @@ export class ForgetPasswordComponent implements OnInit {
   sendResetLink() {
     const forgetPasswordData = this.forgetPasswordForm.value;
 
-    this.resourceService.sendResetLink(forgetPasswordData).subscribe(
+    this.resourceService.reset(forgetPasswordData).subscribe(
       (response: any) => {
         // Handle the response from the backend (e.g., show a success message)
         console.log('Reset link sent successfully:', response);
